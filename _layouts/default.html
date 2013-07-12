@@ -6,11 +6,14 @@
     <title>{{ page.title }}</title>
     <!--<meta name="viewport" content="width=device-width">-->
 
-    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
-    <script type="text/javascript" src="/jquery/jquery-2.0.0.js"></script>
-    <script type="text/javascript" src="/jquery/jquery.blockUI.js"></script>
-    <script type="text/javascript" src="/js/script.js"></script>
+    {% capture lvl %}{{ page.url | append:'index.html' | split:'/' | size }}{% endcapture %}
+    {% capture relative %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
+
+    <link rel="stylesheet" type="text/css" href="{{relative}}bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="{{relative}}css/style.css"/>
+    <script type="text/javascript" src="{{relative}}jquery/jquery-2.0.0.js"></script>
+    <script type="text/javascript" src="{{relative}}jquery/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="{{relative}}js/script.js"></script>
 </head>
 <body>
 
