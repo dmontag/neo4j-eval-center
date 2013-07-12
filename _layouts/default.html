@@ -35,6 +35,10 @@
             </div>
         </div>
     </div>
+                foo
+    {{ page.url | append:'index.html' | split:'/' | size }}
+    {{ relative }}
+    bar
 
     {{ content }}
 </div>
