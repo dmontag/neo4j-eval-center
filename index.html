@@ -6,15 +6,11 @@
     <title>Neo4j Eval Center</title>
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <script type="text/javascript" src="jquery/jquery-2.0.3.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery-2.0.3.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-    <!--<script type="text/javascript" src="jquery/jquery.blockUI.js"></script>-->
-    <script type="text/javascript" src="js/script.js"></script>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
     <script type="text/javascript" src="js/visualization.js"></script>
-    <script type="text/javascript" src="js/opal.js"></script>
-    <script type="text/javascript" src="js/cypherconsole.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -32,6 +28,16 @@
 
             initSampleConsoles(["social", "network", "finance"]);
 
+
+//            ("#main > svg").remove();
+//            [
+//            <svg id=​"graph" width=​"250" height=​"500" style=​"pointer-events:​fill;​ margin-left:​250">​…​</svg>​
+//                    ,
+//            <svg id=​"graph" width=​"250" height=​"500" style=​"pointer-events:​fill;​ margin-left:​250">​…​</svg>​
+//                    ,
+//            <svg id=​"graph" width=​"250" height=​"500" style=​"pointer-events:​fill;​ margin-left:​250">​…​</svg>​
+//            ]
+//            $.post("http://console.neo4j.org/console/cypher", "CREATE n WITH count(*) as _ MATCH (n) RETURN count(n);", function(d){var v = JSON.parse(d).visualization; console.log(v); visualize("main",500,500,v);});
         });
 
         function initSampleConsoles(samples) {
@@ -84,7 +90,8 @@
         <ul>
             <li><a href="#what">What is Neo4j</a></li>
             <li><a href="#how">How is Neo4j being used</a></li>
-            <li><a href="#me">Test drive Neo4j</a></li>
+            <li><a href="#try">Test drive Neo4j</a></li>
+            <li><a href="#engage">Where to learn more</a></li>
         </ul>
     </div>
 
@@ -275,7 +282,7 @@
 
     <hr/>
 
-    <div id="me" class="evalMe">
+    <div id="try" class="evalMe">
         <div class="heading">Take Neo4j for a test drive.</div>
 
         <div class="sample-data">
@@ -328,30 +335,58 @@
             <div class="row-fluid">
                 <div class="span4">
                     <h4>1. Model your graph</h4>
+                    <p>
+                        Draw your domain on a whiteboard. Add type names to the relationships. You're done.
+                    </p>
                 </div>
                 <div class="span4">
-                    <h4>2. Export your data to CSV</h4>
+                    <h4>2. Export your data to TSV</h4>
+                    <p>
+                        Create one file for nodes and one file for relationships, with the graph structure you
+                        wish to model.
+                    </p>
                 </div>
                 <div class="span4">
                     <h4>3. Import the data</h4>
+                    <p>
+                        Use the command-line Neo4j
+                        <a href="https://github.com/jexp/batch-import">import tool</a> to ingest the TSV files.
+                    </p>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span4"><img src="img/model.jpg" /></div>
+                <div class="span4">
+                    <pre>id→name→brand
+1→Joe
+2→Bob→
+3→→Tesla</pre>
+                    <em>nodes.tsv</em>
+                    <hr/>
+                    <pre>from→to→type
+1→2→KNOWS
+2→3→WORKS_AT</pre>
+                    <em>rels.tsv</em>
+                </div>
+                <div class="span4">
+                    <code>java … -jar … db nodes.tsv rels.tsv</code>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--<hr/>-->
+    <hr/>
 
-    <!--<div class="row-fluid">-->
-        <!--<div class="heading">Engage</div>-->
-
-        <!--<div class="row-fluid">-->
-            <!--<div class="span6">-->
-                <!--<p>-->
-                    <!--Bla bla-->
-                <!--</p>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
+    <div id="engage" class="row-fluid">
+        <div class="heading">Engage</div>
+        <div class="row-fluid">
+            <div class="span6">
+                <p>
+                    Bla bla
+                </p>
+            </div>
+        </div>
+    </div>
 
 </div>
 </body>
