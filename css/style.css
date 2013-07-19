@@ -1,65 +1,94 @@
 body {
-    padding-top: 20px;
-    padding-bottom: 60px;
+    background-color: #eeeeee;
 }
 
 .container {
     margin: 0 auto;
-    max-width: 1000px;
+    padding: 50px;
+    max-width: 900px;
+    background-color: white;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
 }
 
-.container > hr {
-    margin: 60px 0;
+.heading-top {
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 20px;
 }
 
-.hero-unit {
-    /*background-image: url(/img/graphdatabases-cover.png);*/
-    /*background-repeat:no-repeat;*/
+.heading {
+    font-size: 35px;
+    text-align: center;
+    font-weight: lighter;
+    padding-top: 30px;
+    padding-bottom: 50px;
 }
 
-.jumbotron {
-    margin: 80px 0;
+.heading-first {
+    font-size: 35px;
+    text-align: center;
+    font-weight: lighter;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.heading-last {
+    font-size: 35px;
+    text-align: center;
+    font-weight: lighter;
+    padding-bottom: 50px;
+}
+
+
+.intro-video {
+    padding-top: 50px;
+    position: relative;
+    left: 90px;
+}
+
+/*Slightly indent text compared to hr's*/
+.row-fluid {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.evalIntro .highlighted {
+    color: #005580;
+}
+
+.menu li {
+    display: inline;
+    padding: 10px;
+}
+.menu {
     text-align: center;
 }
 
-.jumbotron h1 {
-    font-size: 70px;
-    line-height: 1;
-}
-
-.jumbotron .lead {
-    font-size: 20px;
-    line-height: 1.25;
-}
-
-
-
-
-/* Customize the navbar links to be fill the entire space of the .navbar */
-.navbar .navbar-inner {
-    padding: 0;
-}
-.navbar .nav {
-    margin: 0;
-    display: table;
-    width: 100%;
-}
-.navbar .nav li {
-    display: table-cell;
-    width: 1%;
-    float: none;
-}
-.navbar .nav li a {
-    font-weight: bold;
+.evalHow .info {
     text-align: center;
-    border-left: 1px solid rgba(255,255,255,.75);
-    border-right: 1px solid rgba(0,0,0,.1);
+    padding-bottom: 20px;
 }
-.navbar .nav li:first-child a {
-    border-left: 0;
-    border-radius: 3px 0 0 3px;
+
+.explore {
+    padding-bottom: 20px;
 }
-.navbar .nav li:last-child a {
-    border-right: 0;
-    border-radius: 0 3px 3px 0;
+.explore h4 {
+    text-align: center;
+}
+.explore-links {
+    text-align: center;
+}
+.explore-links ul {
+    display: inline-block;
+}
+.explore-example {
+    /*height: 80px;*/
+}
+.explore-example .logo {
+    height: 50px;
+    float: left;
+    padding-right: 10px;
+}
+.explore-example p {
+    padding-bottom: 10px;
 }
