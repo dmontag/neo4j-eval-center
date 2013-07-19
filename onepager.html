@@ -10,6 +10,12 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
     <!--<script type="text/javascript" src="jquery/jquery.blockUI.js"></script>-->
     <script type="text/javascript" src="js/script.js"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
+    <script type="text/javascript" src="js/visualization.js"></script>
+    <script type="text/javascript" src="js/opal.js"></script>
+    <script type="text/javascript" src="js/cypherconsole.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function() {
             $('.explore-links a').click(function (e) {
@@ -20,6 +26,13 @@
                 e.preventDefault();
                 $(this).tab('show');
             });
+            $("#contact-button").click(function(e) {
+                window.location = "http://info.neotechnology.com/ContactUs.html"
+            });
+
+            var gg = new GraphGist(jQuery);
+            var sel = $("#sample-social .console");
+            gg.c(sel, sel.attr("query"), sel.attr("title"), function() {});
         });
     </script>
 </head>
@@ -41,7 +54,7 @@
 
         <div class="row-fluid">
             <div class="row-fluid">
-                <div class="highlighted span7">
+                <div class="highlighted span7 offset1">
                     If you're not in touch with us yet, we can help you evaluate Neo4j.
                     With over 30 customers in the Global 2000 alone, we draw on extensive experience
                     to help you build the best graph solutions.
@@ -132,12 +145,12 @@
                     <li><a href="#industry-gaming" data-toggle="tab">Gaming</a></li>
                 </ul>
             </div>
-            <div class="explore-example tab-content row-fluid span10 offset1">
+            <div class="explore-example tab-content row-fluid span9 offset1">
                 <div id="industry-software" class="tab-pane active">
                     <p>
-                    <img class="logo" src="img/logos/fiftythree.png" />
-                    FiftyThree is the company behind Paper, an iPad app for freeform writing/sketching/drawing
-                    used at companies such as Apple, Facebook, Nike, Pixar, and Vimeo.
+                        <img class="logo" src="img/logos/fiftythree.png" />
+                        FiftyThree is the company behind Paper, an iPad app for freeform writing/sketching/drawing
+                        used at companies such as Apple, Facebook, Nike, Pixar, and Vimeo.
                     </p>
                     <p>
                         "It sounds cliche, but we were truly able to translate whiteboard sketches
@@ -197,7 +210,7 @@
                     <li><a href="#usecase-geo" data-toggle="tab">Geo</a></li>
                 </ul>
             </div>
-            <div class="explore-example tab-content row-fluid span10 offset1">
+            <div class="explore-example tab-content row-fluid span9 offset1">
                 <div id="usecase-social" class="tab-pane active">
                     <p>
                         <img class="logo" src="img/logos/dtag.png" />
@@ -255,36 +268,49 @@
         <div class="heading">Take Neo4j for a test drive.</div>
 
         <div class="sample-data">
-            <div class="row-fluid tabbable tabs-left">
-                <ul class="nav nav-tabs">
+            <div class="row-fluid sample-data-menu">
+                <ul class="nav nav-pills">
                     <li class="active"><a href="#sample-social" data-toggle="tab">Social</a></li>
                     <li><a href="#sample-network" data-toggle="tab">Network Management</a></li>
                     <li><a href="#sample-finance" data-toggle="tab">Fraud Detection</a></li>
                 </ul>
-                <div class="tab-content">
+            </div>
+            <div class="row-fluid">
+                <div class="tab-content span9 offset1">
                     <div id="sample-social" class="tab-pane active">
                         Social
+                        <!--<div class="console" title="Sample social dataset"-->
+                             <!--query='-->
+                             <!--CREATE-->
+                             <!--(a{name:"David"}) -[:KNOWS]-> (b{name:"Joe"}),-->
+                             <!--a-[:KNOWS]->c-->
+                             <!--'></div>-->
+                        <div id="console"></div>
                     </div>
                     <div id="sample-network" class="tab-pane">
                         Network
+
+                        <div class="console"></div>
                     </div>
                     <div id="sample-finance" class="tab-pane">
                         Finance
+
+                        <div class="console"></div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="heading-first">Try it with your own data in 3 steps.</div>
         <div class="your-data">
             <div class="row-fluid">
-                <h4>Try Neo4j with your data</h4>
                 <div class="span4">
-                    Step 1
+                    <h4>1. Export your data to CSV</h4>
                 </div>
                 <div class="span4">
-                    Step 2
+                    <h4>2. Import it into Neo4j</h4>
                 </div>
                 <div class="span4">
-                    Step 3
+                    <h4>3. Query it</h4>
                 </div>
             </div>
         </div>

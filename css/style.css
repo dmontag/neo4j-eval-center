@@ -69,6 +69,7 @@ body {
     padding-bottom: 20px;
 }
 
+
 .explore {
     padding-bottom: 20px;
 }
@@ -91,4 +92,18 @@ body {
 }
 .explore-example p {
     padding-bottom: 10px;
+}
+
+
+
+.sample-data-menu {
+    text-align: center;
+}
+.sample-data ul {
+    display: inline-block;
+}
+
+.cypherdoc-console {
+    width: 600px;
+    height: 300px;
 }
