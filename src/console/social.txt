@@ -1,2 +1,17 @@
 START root=node(0) DELETE root WITH count(*) AS __ CREATE
-(joe{name:"Joe"})-[:KNOWS]->(bob{name:"Bob"})
+(joe{name:"Joe"}),
+(bob{name:"Bob"}),
+(sally{name:"Sally"}),
+(billy{name:"Billy"}),
+(anna{name:"Anna"}),
+(jim{name:"Jim"}),
+(mike{name:"Mike"}),
+joe-[:KNOWS]->bob,
+joe-[:KNOWS]->sally,
+bob-[:KNOWS]->sally,
+sally-[:KNOWS]->anna,
+anna-[:KNOWS]->jim,
+anna-[:KNOWS]->mike,
+jim-[:KNOWS]->mike,
+mike-[:KNOWS]->dave,
+jim-[:KNOWS]->billy

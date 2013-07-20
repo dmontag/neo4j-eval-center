@@ -1,0 +1,4 @@
+MATCH (person)-[:KNOWS]-(friend)-[:KNOWS]-(foaf) 
+WHERE person.name = "Joe"
+  AND NOT(person-[:KNOWS]-foaf)
+RETURN foaf                         
