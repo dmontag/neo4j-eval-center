@@ -93,13 +93,13 @@ function GraphVisualization() {
         // end-of-line arrow
         vis.append('svg:defs').selectAll('marker').data([ 'end-marker' ]) // link types if needed
             .enter().append('svg:marker').attr('viewBox', '0 -5 10 10').attr('refX', 25).attr('refY', -1.5).attr(
-            'markerWidth', 4).attr('markerHeight', 4).attr('class', 'd3-marker').attr('orient', 'auto').append(
+            'markerWidth', 4).attr('markerHeight', 4).attr("id", "end-marker").attr('class', 'd3-marker').attr('orient', 'auto').append(
             'svg:path').attr('d', 'M0,-5L10,0L0,5');
 
         var link = vis.selectAll('line.link').data(data.links).enter().append('svg:line').attr('class', 'd3-link')
             .attr('marker-end', 'url(#end-marker)') // was d.type
             .style('stroke',function (d) {
-                return d['selected'] ? 'red' : null;
+                return d['selected'] ? 'red' : 'black';
             }).style('stroke-width',function (d) {
                 return d['selected'] ? 2 : null;
             }).attr('x1',function (d) {

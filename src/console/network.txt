@@ -1,0 +1,2 @@
+START root=node(0) DELETE root WITH count(*) AS __ CREATE
+(router{name:"Cisco 2620"})

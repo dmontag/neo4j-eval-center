@@ -111,7 +111,11 @@ body {
     display: inline-block;
 }
 
-.cypherdoc-console {
-    width: 600px;
-    height: 300px;
+
+.console {
+    background-color: #eee;
+    border-radius: 10px;
+}
+.d3-path-text {
+    font-size: 12px;
 }

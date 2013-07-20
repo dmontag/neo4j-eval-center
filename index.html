@@ -26,9 +26,6 @@
                 window.location = "http://info.neotechnology.com/ContactUs.html"
             });
 
-            initSampleConsoles(["social", "network", "finance"]);
-
-
 //            ("#main > svg").remove();
 //            [
 //            <svg id=​"graph" width=​"250" height=​"500" style=​"pointer-events:​fill;​ margin-left:​250">​…​</svg>​
@@ -37,15 +34,17 @@
 //                    ,
 //            <svg id=​"graph" width=​"250" height=​"500" style=​"pointer-events:​fill;​ margin-left:​250">​…​</svg>​
 //            ]
-//            $.post("http://console.neo4j.org/console/cypher", "CREATE n WITH count(*) as _ MATCH (n) RETURN count(n);", function(d){var v = JSON.parse(d).visualization; console.log(v); visualize("main",500,500,v);});
+            var gv = new GraphVisualization();
+            $.each(["social","network","finance"], function(i, usecase) {
+                $.getJSON("/viz/" + usecase + ".txt.viz", function(d) {
+                    var el = $("#sample-" + usecase + " .console")[0];
+                    console.log(d);
+                    console.log(el);
+                    gv.visualize(el, 500, 300, d);
+                });
+            });
         });
 
-        function initSampleConsoles(samples) {
-            if (!samples) return;
-            var gg = new GraphGist(jQuery);
-            var el = $("#sample-"+samples.pop()+" .console");
-            gg.c(el, el.attr("query"), el.attr("title"), function() { initSampleConsoles(samples); });
-        }
     </script>
 </head>
 <body>
@@ -297,33 +296,21 @@
                 <div class="tab-content span9 offset1">
                     <div id="sample-social" class="tab-pane active">
                         Social
-                        <div class="console" title="Sample social dataset"
-                             query='
-                             CREATE
-                             (a{name:"David"}) -[:KNOWS]-> (b{name:"Joe"})
-                             '></div>
+                        <div class="console"></div>
 
                         Walkthrough of 3 queries
                     </div>
                     <div id="sample-network" class="tab-pane">
                         Network
 
-                        <div class="console" title="Sample network dataset"
-                             query='
-                             CREATE
-                             (a{name:"Server"}) -[:DEPENDS_ON]-> (b{name:"Switch"})
-                             '></div>
+                        <div class="console"></div>
 
                         Walkthrough of 3 queries
                     </div>
                     <div id="sample-finance" class="tab-pane">
                         Finance
 
-                        <div class="console" title="Sample finance dataset"
-                             query='
-                             CREATE
-                             (a{name:"Business"}) -[:BOUGHT_FROM]-> (b{name:"Seller"})
-                             '></div>
+                        <div class="console"></div>
 
                         Walkthrough of 3 queries
                     </div>
