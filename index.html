@@ -31,16 +31,16 @@
             var w = 350, h = 350;
             $.each(["social","network","finance"], function(i, usecase) {
                 var el = $("#sample-" + usecase + " .console")[0];
-                $.getJSON("/viz/" + usecase + ".txt.viz", function(d) {
+                $.getJSON("viz/" + usecase + ".txt.viz", function(d) {
                     gv.visualize(el, w, h, d);
                 });
                 $("#sample-" + usecase + " .runnable-example").each(function(i, runnable) {
                     var frag = $(runnable).attr("frag");
-                    $.get("/viz/" + usecase + ".txt.frag" + frag, function(d) {
+                    $.get("viz/" + usecase + ".txt.frag" + frag, function(d) {
                         $(".cypher-query", runnable).text(d);
                     });
                     $(".run-example", runnable).click(function(e) {
-                        $.getJSON("/viz/" + usecase + ".txt.frag" + frag + ".viz", function(d) {
+                        $.getJSON("viz/" + usecase + ".txt.frag" + frag + ".viz", function(d) {
                             $("svg", el).remove();
                             gv.visualize(el, w, h, d);
                         });
