@@ -1,2 +1,16 @@
 START root=node(0) DELETE root WITH count(*) AS __ CREATE
-(router{name:"Cisco 2620"})
+(svc1 {name:"Public Website"}),
+(svc2 {name:"CRM"}),
+(vm1 {name:"Webserver VM"}),
+(vm2 {name:"Database VM"}),
+(srv1 {name:"Server 1"}),
+(srv2 {name:"Server 2"}),
+(san {name:"SAN"}),
+svc1-[:DEPENDS_ON]->vm1,
+svc1-[:DEPENDS_ON]->vm2,
+svc2-[:DEPENDS_ON]->vm2,
+vm1-[:DEPENDS_ON]->srv1,
+vm2-[:DEPENDS_ON]->srv2,
+srv1-[:DEPENDS_ON]->san,
+srv2-[:DEPENDS_ON]->san
+

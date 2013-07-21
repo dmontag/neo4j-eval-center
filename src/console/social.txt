@@ -13,5 +13,4 @@ sally-[:KNOWS]->anna,
 anna-[:KNOWS]->jim,
 anna-[:KNOWS]->mike,
 jim-[:KNOWS]->mike,
-mike-[:KNOWS]->dave,
 jim-[:KNOWS]->billy

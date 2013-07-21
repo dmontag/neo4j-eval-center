@@ -117,5 +117,12 @@ body {
     border-radius: 10px;
 }
 .d3-path-text {
-    font-size: 12px;
+    font-size: 9px;
+}
+
+.evalEngage .row-fluid {
+    padding-bottom: 20px;
+}
+.evalEngage h3 {
+    font-weight: lighter;
 }

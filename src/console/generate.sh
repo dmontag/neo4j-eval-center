@@ -15,7 +15,7 @@ for base in *.txt; do
         cat $query >> $query.compiled
 
         curl -d @$query.compiled http://console.neo4j.org/console/cypher \
-        | ruby -rjson -e 'puts JSON.dump(JSON.parse(STDIN.read)["visualization"])' \
+        | ruby -rjson -e 's=STDIN.read; STDERR.puts(s); puts JSON.dump(JSON.parse(s)["visualization"])' \
         > $query.viz
     done
 done

@@ -10,7 +10,7 @@
     <script type="text/javascript" src="js/jquery/jquery-2.0.3.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/visualization.js"></script>
 
     <script type="text/javascript">
@@ -27,29 +27,22 @@
                 window.location = "http://info.neotechnology.com/ContactUs.html"
             });
 
-//            ("#main > svg").remove();
-//            [
-//            <svg id=​"graph" width=​"250" height=​"500" style=​"pointer-events:​fill;​ margin-left:​250">​…​</svg>​
-//                    ,
-//            <svg id=​"graph" width=​"250" height=​"500" style=​"pointer-events:​fill;​ margin-left:​250">​…​</svg>​
-//                    ,
-//            <svg id=​"graph" width=​"250" height=​"500" style=​"pointer-events:​fill;​ margin-left:​250">​…​</svg>​
-//            ]
             var gv = new GraphVisualization();
+            var w = 350, h = 350;
             $.each(["social","network","finance"], function(i, usecase) {
                 var el = $("#sample-" + usecase + " .console")[0];
                 $.getJSON("/viz/" + usecase + ".txt.viz", function(d) {
-                    gv.visualize(el, 500, 300, d);
+                    gv.visualize(el, w, h, d);
                 });
                 $("#sample-" + usecase + " .runnable-example").each(function(i, runnable) {
-                    var id = $(runnable).attr("id");
-                    $.get("/viz/" + usecase + ".txt." + id, function(d) {
+                    var frag = $(runnable).attr("frag");
+                    $.get("/viz/" + usecase + ".txt.frag" + frag, function(d) {
                         $(".cypher-query", runnable).text(d);
                     });
                     $(".run-example", runnable).click(function(e) {
-                        $.getJSON("/viz/" + usecase + ".txt." + id + ".viz", function(d) {
+                        $.getJSON("/viz/" + usecase + ".txt.frag" + frag + ".viz", function(d) {
                             $("svg", el).remove();
-                            gv.visualize(el, 500, 300, d);
+                            gv.visualize(el, w, h, d);
                         });
                     });
                 });
@@ -310,22 +303,22 @@
                     <div class="tab-content">
                         <div id="sample-social" class="tab-pane active">
                             <div class="span7">
-                                <div class="runnable-example" id="frag0">
-                                    <h4>Friends of friends <button class="run-example btn btn-success btn-mini">Run this</button></h4>
+                                <div class="runnable-example" frag="0">
+                                    <h4>Friends of Friends <button class="run-example btn btn-success btn-mini">Try this</button></h4>
                                     <p>
                                         Find all of Joe's second-degree friends.
                                         <pre class="cypher-query"></pre>
                                     </p>
                                 </div>
-                                <div class="runnable-example" id="frag1">
-                                    <h4>Common friend <button class="run-example btn btn-success btn-mini">Run this</button></h4>
+                                <div class="runnable-example" frag="1">
+                                    <h4>Common Friends <button class="run-example btn btn-success btn-mini">Try this</button></h4>
                                     <p>
                                         Find all friends that Joe has in common with Sally.
                                         <pre class="cypher-query"></pre>
                                     </p>
                                 </div>
-                                <div class="runnable-example" id="frag2">
-                                    <h4>Connecting path <button class="run-example btn btn-success btn-mini">Run this</button></h4>
+                                <div class="runnable-example" frag="2">
+                                    <h4>Connecting Paths <button class="run-example btn btn-success btn-mini">Try this</button></h4>
                                     <p>
                                         Find all friends on the shortest path that connects Joe to Billy.
                                         <pre class="cypher-query"></pre>
@@ -337,27 +330,57 @@
                             </div>
                         </div>
                         <div id="sample-network" class="tab-pane">
-                            <div class="span6">
-                                <h4>Network</h4>
-                                <p>
-                                    Walkthrough of 3 queries
-                                </p>
+                            <div class="span7">
+                                <div class="runnable-example" frag="0">
+                                    <h4>Impact Analysis <button class="run-example btn btn-success btn-mini">Try this</button></h4>
+                                    <p>
+                                        Find all upstreams impacted by server outage.
+                                    <pre class="cypher-query"></pre>
+                                    </p>
+                                </div>
+                                <div class="runnable-example" frag="1">
+                                    <h4>Dependency Analysis <button class="run-example btn btn-success btn-mini">Try this</button></h4>
+                                    <p>
+                                        Find all dependencies of the public website.
+                                    <pre class="cypher-query"></pre>
+                                    </p>
+                                </div>
+                                <div class="runnable-example" frag="2">
+                                    <h4>... <button class="run-example btn btn-success btn-mini">Try this</button></h4>
+                                    <p>
+                                        ???
+                                    <pre class="cypher-query"></pre>
+                                    </p>
+                                </div>
                             </div>
 
-                            <div class="span6">
+                            <div class="span5">
                                 <div class="console"></div>
                             </div>
                         </div>
                         <div id="sample-finance" class="tab-pane">
-                            <div class="span6">
-                                <h4>Finance</h4>
+                            <div class="runnable-example" frag="0">
+                                <h4>Fraud Transitive Closure <button class="run-example btn btn-success btn-mini">Try this</button></h4>
                                 <p>
-                                    Walkthrough of 3 queries
+                                    Given a suspected user, find related information to investigate.
+                                <pre class="cypher-query"></pre>
                                 </p>
                             </div>
-                            <div class="span6">
-                                <div class="console"></div>
+                            <div class="runnable-example" frag="1">
+                                <h4>Dependency Analysis <button class="run-example btn btn-success btn-mini">Try this</button></h4>
+                                <p>
+                                    Find all dependencies of a service
+                                <pre class="cypher-query"></pre>
+                                </p>
                             </div>
+                            <div class="runnable-example" frag="2">
+                                <h4>... <button class="run-example btn btn-success btn-mini">Try this</button></h4>
+                                <p>
+                                    ???
+                                <pre class="cypher-query"></pre>
+                                </p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -402,7 +425,22 @@
                     <em>rels.tsv</em>
                 </div>
                 <div class="span4">
-                    <code>java … -jar … db nodes.tsv rels.tsv</code>
+                    <p>
+                        <code>java … -jar … db nodes.tsv rels.tsv</code>
+                    </p>
+                    <hr/>
+                    <p>
+                        Your newly imported database is in the <code>db</code> directory.
+                    </p>
+                    <p>
+                        Then edit the <code>conf/neo4j-server.properties</code> file, changing
+                        the <code>org.neo4j.server.database.location</code> value to your database path.
+                    </p>
+                    <p>
+                        Finally start Neo4j with <code>bin/neo4j start</code> and open the 
+                        <a href="http://localhost:7474">Neo4j Browser</a>.
+                    
+                    </p>
                 </div>
             </div>
         </div>
@@ -410,13 +448,30 @@
 
     <hr/>
 
-    <div id="engage" class="row-fluid">
+    <div id="engage" class="evalEngage row-fluid">
         <div class="heading">Engage</div>
         <div class="row-fluid">
+            <div class="span2 offset2">
+                <img src="img/graphdatabases-cover.png"/>
+            </div>
             <div class="span6">
-                <p>
-                    Bla bla
-                </p>
+                <h3>Read the book</h3>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span6 offset2">
+                <h3>Check out a webinar</h3>
+            </div>
+            <div class="span2">
+                <img src="http://info.actionpaper.net/Portals/159131/images/webinar.png"/>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span2 offset2">
+                <img src="http://assets.neo4j.org/img/events/neo4j_icon_meetup.png" />
+            </div>
+            <div class="span6">
+                <h3>Attend an event</h3>
             </div>
         </div>
     </div>

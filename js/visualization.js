@@ -82,18 +82,29 @@ function GraphVisualization() {
         return labels(ob) + _title(ob);
     }
 
+
     function visualize(elementOrId, w, h, data) {
+        var fill = d3.scale.category10();
         var select = ( typeof elementOrId === 'string' ) ? '#' + elementOrId : elementOrId;
         var vis = d3.select(select).append('svg').attr('class', 'd3-graph').attr('height', h)
             .attr('style', 'pointer-events:fill;');
 //    console.log($(d3).width());
-        var force = self.force = d3.layout.force().nodes(data.nodes).links(data.links).gravity(.2).distance(80)
-            .charge(-1000).size([w, h]).start();
+        var force = d3.layout.force()
+            .charge(-1000)
+            .linkDistance(40)
+            .gravity(.2)
+            .size([w, h]);
+
+        force
+            .nodes(data.nodes)
+            .links(data.links)
+            .on("tick", tick)
+            .start();
 
         // end-of-line arrow
         vis.append('svg:defs').selectAll('marker').data([ 'end-marker' ]) // link types if needed
-            .enter().append('svg:marker').attr('viewBox', '0 -5 10 10').attr('refX', 25).attr('refY', -1.5).attr(
-            'markerWidth', 4).attr('markerHeight', 4).attr("id", "end-marker").attr('class', 'd3-marker').attr('orient', 'auto').append(
+            .enter().append('svg:marker').attr('viewBox', '0 -5 10 10').attr('refX', 15).attr('refY', 0).attr(
+            'markerWidth', 8).attr('markerHeight', 8).attr("id", "end-marker").attr('class', 'd3-marker').attr('orient', 'auto').append(
             'svg:path').attr('d', 'M0,-5L10,0L0,5');
 
         var link = vis.selectAll('line.link').data(data.links).enter().append('svg:line').attr('class', 'd3-link')
@@ -113,13 +124,11 @@ function GraphVisualization() {
             });
 
         var node = vis.selectAll('g.node').data(data.nodes).enter().append('circle').attr('class', 'd3-node').attr(
-            'r', 5).style('fill',function (d) {
-                return color(propertyHash(d) % 20);
-            }).style('stroke-width',function (d) {
-                return d['selected'] ? 2 : 0;
-            }).style('stroke',function (d) {
-                return d['selected'] ? 'red' /* was d3.rgb(color2(hash(sel) % 20)).brighter() */ : null;
-            }).call(force.drag);
+            'r', 5)
+            .style('fill', function (d) { return d['selected'] ? 'red' : fill(d.group); })
+            .style('stroke-width',function (d) { return d['selected'] ? 1 : 1; })
+            .style('stroke',function (d) { return d3.rgb(fill(d.group)).darker(); })
+            .call(force.drag);
 
         node.append('title').text(function (d) {
             return toString(d);
@@ -147,16 +156,21 @@ function GraphVisualization() {
             return d.type;
         });
 
-        force.on('tick', function () {
-            link.attr('x1',function (d) {
-                return d.source.x;
-            }).attr('y1',function (d) {
-                    return d.source.y;
-                }).attr('x2',function (d) {
-                    return d.target.x;
-                }).attr('y2', function (d) {
-                    return d.target.y;
-                });
+        function tick(e) {
+            // Push sources up and targets down to form a weak tree.
+            var k = 20 * e.alpha;
+            data.links.forEach(function (d, i) {
+                d.source.y -= k;
+                d.target.y += k;
+            });
+
+//            node.attr("cx", function (d) { return d.x; })
+//                .attr("cy", function (d) { return d.y; });
+
+            link.attr("x1", function (d) { return d.source.x; })
+                .attr("y1", function (d) { return d.source.y; })
+                .attr("x2", function (d) { return d.target.x; })
+                .attr("y2", function (d) { return d.target.y; });
 
             text.attr('transform', function (d) {
                 return 'translate(' + d.x + ',' + d.y + ')';
@@ -179,7 +193,8 @@ function GraphVisualization() {
                     + ', 0 , 0)';
             });
 
-        });
+        }
+
     }
 
     function render(id, w, h, url) {
