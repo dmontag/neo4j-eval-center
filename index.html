@@ -288,7 +288,7 @@
     <hr/>
 
     <div id="try" class="evalMe">
-        <div class="heading">Take Neo4j for a test drive.</div>
+        <div class="heading">Take Neo4j for a test drive with Cypher.</div>
 
         <div class="sample-data">
             <div class="row-fluid sample-data-menu">
@@ -334,7 +334,7 @@
                                 <div class="runnable-example" frag="0">
                                     <h4>Impact Analysis <button class="run-example btn btn-success btn-mini">Try this</button></h4>
                                     <p>
-                                        Find all upstreams impacted by server outage.
+                                        Find all upstreams impacted by outage of Server 1.
                                     <pre class="cypher-query"></pre>
                                     </p>
                                 </div>
@@ -346,9 +346,9 @@
                                     </p>
                                 </div>
                                 <div class="runnable-example" frag="2">
-                                    <h4>... <button class="run-example btn btn-success btn-mini">Try this</button></h4>
+                                    <h4>Statistics <button class="run-example btn btn-success btn-mini">Try this</button></h4>
                                     <p>
-                                        ???
+                                        Find the most depended-upon component.
                                     <pre class="cypher-query"></pre>
                                     </p>
                                 </div>
@@ -359,28 +359,34 @@
                             </div>
                         </div>
                         <div id="sample-finance" class="tab-pane">
-                            <div class="runnable-example" frag="0">
-                                <h4>Fraud Transitive Closure <button class="run-example btn btn-success btn-mini">Try this</button></h4>
+                            <div class="span7">
+ <div class="runnable-example" frag="0">
+                                <h4>Transitive Closure <button class="run-example btn btn-success btn-mini">Try this</button></h4>
                                 <p>
-                                    Given a suspected user, find related information to investigate.
+                                    Given suspicions about Hank, find related information to investigate.
                                 <pre class="cypher-query"></pre>
                                 </p>
                             </div>
                             <div class="runnable-example" frag="1">
-                                <h4>Dependency Analysis <button class="run-example btn btn-success btn-mini">Try this</button></h4>
+                                <h4>Investigation Targeting <button class="run-example btn btn-success btn-mini">Try this</button></h4>
                                 <p>
-                                    Find all dependencies of a service
+                                    Find large cliques to investigate further.
                                 <pre class="cypher-query"></pre>
                                 </p>
                             </div>
                             <div class="runnable-example" frag="2">
-                                <h4>... <button class="run-example btn btn-success btn-mini">Try this</button></h4>
+                                <h4>Fast Insights <button class="run-example btn btn-success btn-mini">Try this</button></h4>
                                 <p>
-                                    ???
+                                    Find all accounts for a given SSN.
                                 <pre class="cypher-query"></pre>
                                 </p>
                             </div>
 
+                            </div>
+
+                            <div class="span5">
+                                <div class="console"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -403,7 +409,7 @@
                     </p>
                 </div>
                 <div class="span4">
-                    <h4>3. Import the data</h4>
+                    <h4>3. Import the graph</h4>
                     <p>
                         Use the command-line Neo4j
                         <a href="https://github.com/jexp/batch-import">import tool</a> to ingest the TSV files.
@@ -428,7 +434,6 @@
                     <p>
                         <code>java … -jar … db nodes.tsv rels.tsv</code>
                     </p>
-                    <hr/>
                     <p>
                         Your newly imported database is in the <code>db</code> directory.
                     </p>
@@ -449,29 +454,73 @@
     <hr/>
 
     <div id="engage" class="evalEngage row-fluid">
-        <div class="heading">Engage</div>
+        <div class="heading">Interested? Learn more.</div>
         <div class="row-fluid">
-            <div class="span2 offset2">
+            <div class="span2 offset1">
                 <img src="img/graphdatabases-cover.png"/>
             </div>
-            <div class="span6">
+            <div class="span8">
                 <h3>Read the book</h3>
+                <p>
+                    Take the opportunity to read the brand new O'Reilly book on Graph Databases.
+                    Jim Webber, Ian Robinson, and Emil Eifrém cover all things relevant to graphs,
+                    from modeling, to import, querying, and optimization.
+                </p>
+                <p>
+                    Visit <a href="http://graphdatabases.com">GraphDatabases.com</a> to download
+                    a free copy.
+                </p>
             </div>
         </div>
         <div class="row-fluid">
-            <div class="span6 offset2">
+            <div class="span8 offset1">
                 <h3>Check out a webinar</h3>
+                <p>
+                    Frequent webinars feature Neo Technology customers, engineers, and more.
+                    Presenting on success stories, technical deep-dives, roadmap, and more, there are
+                    many recorded webinars available for watching.
+                </p>
+                <p>
+                    Visit <a href="http://www.neo4j.org/participate/events/webinars">Neo4j.org</a> to
+                    see upcoming webinars, as well as recorded ones.
+                </p>
             </div>
             <div class="span2">
-                <img src="http://info.actionpaper.net/Portals/159131/images/webinar.png"/>
+                <img src="img/webinars.jpg"/>
             </div>
         </div>
         <div class="row-fluid">
-            <div class="span2 offset2">
+            <div class="span2 offset1">
                 <img src="http://assets.neo4j.org/img/events/neo4j_icon_meetup.png" />
             </div>
-            <div class="span6">
+            <div class="span8">
                 <h3>Attend an event</h3>
+                <p>
+                    Neo4j events are hosted around the globe almost daily. They're a great way
+                    of meeting other Neo4j users in a relaxed setting to talk about anything from
+                    use cases, to cluster setups, to the beer is being served.
+                </p>
+                <p>
+                    Visit <a href="http://www.neotechnology.com/calendar/">NeoTechnology.com</a> for
+                    a list of events.
+                </p>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span8 offset1">
+                <h3>Get in touch</h3>
+                <p>
+                    Whether you're doing a PoC for your company, or playing around with Neo4j for a 
+                    side project, we love hearing from you.
+                    Reach out on 
+                    <a href="http://twitter.com/neo4j">Twitter</a>, 
+                    shoot us an <a href="mailto:info@neotechnology.com">e-mail</a>, 
+                    use this <a href="http://info.neotechnology.com/ContactUs.html">form</a>,
+                    or try us on our <a href="https://groups.google.com/forum/#!forum/neo4j">Google Group</a>.
+                </p>
+            </div>
+            <div class="span2">
+                <img src="img/get-in-touch.jpg"/>
             </div>
         </div>
     </div>

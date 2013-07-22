@@ -1,2 +1,21 @@
 START root=node(0) DELETE root WITH count(*) AS __ CREATE
-(bank{name:"BofA"})
+(p1{name:"Jane"}),
+(ssn1{name:"SSN #123-45-6789", number:"123-45-6789"}),
+(acct1{name:"Chase Account #1523"}),
+acct1<-[:ACCOUNT]-p1-[:SSN]->ssn1,
+(p2{name:"Bill"}),
+(ssn2{name:"SSN #523-25-2364", number:"523-25-2364"}),
+(acct2{name:"BofA Account #4634"}),
+acct2<-[:ACCOUNT]-p2-[:SSN]->ssn2,
+(p3{name:"Hank"}),
+(p4{name:"Abby"}),
+(p5{name:"Sophie"}),
+(p6{name:"Max"}),
+(ssn3{name:"SSN #993-63-2634", number:"993-63-2634"}),
+(acct3{name:"Cayman Account #863"}),
+p4-[:SSN]->ssn3,
+p5-[:SSN]->ssn3,
+p6-[:SSN]->ssn3,
+p3-[:ACCOUNT]->acct3,
+p4-[:ACCOUNT]->acct3
+

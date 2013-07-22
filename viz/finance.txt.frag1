@@ -1,0 +1,4 @@
+ MATCH (n)-[*]-(o)
+ WITH n, count(distinct o) AS size
+ WHERE size > 2
+ RETURN n

@@ -84,15 +84,23 @@ function GraphVisualization() {
 
 
     function visualize(elementOrId, w, h, data) {
+
+        var k = Math.sqrt(data.nodes.length / (w * h));
+
+
+
+
         var fill = d3.scale.category10();
         var select = ( typeof elementOrId === 'string' ) ? '#' + elementOrId : elementOrId;
         var vis = d3.select(select).append('svg').attr('class', 'd3-graph').attr('height', h)
             .attr('style', 'pointer-events:fill;');
 //    console.log($(d3).width());
         var force = d3.layout.force()
-            .charge(-1000)
+//            .charge(-1000)
+            .charge(-25 / k)
+            .gravity(100 * k)
             .linkDistance(40)
-            .gravity(.2)
+//            .gravity(.2)
             .size([w, h]);
 
         force
@@ -163,9 +171,6 @@ function GraphVisualization() {
                 d.source.y -= k;
                 d.target.y += k;
             });
-
-//            node.attr("cx", function (d) { return d.x; })
-//                .attr("cy", function (d) { return d.y; });
 
             link.attr("x1", function (d) { return d.source.x; })
                 .attr("y1", function (d) { return d.source.y; })
