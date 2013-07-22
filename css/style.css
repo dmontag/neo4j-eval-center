@@ -52,8 +52,8 @@ hr {
 
 /*Slightly indent text compared to hr's*/
 .row-fluid {
-    padding-left: 5px;
-    padding-right: 5px;
+    /*padding-left: 5px;*/
+    /*padding-right: 5px;*/
 }
 
 .evalIntro .highlighted {
@@ -89,28 +89,28 @@ hr {
 
 
 .explore {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
-.explore h4 {
-    text-align: center;
-}
-.explore-links {
-    text-align: center;
-}
-.explore-links ul {
-    display: inline-block;
-}
-.explore-example {
+/*.explore h4 {*/
+    /*text-align: center;*/
+/*}*/
+/*.explore-links {*/
+    /*text-align: center;*/
+/*}*/
+/*.explore-links ul {*/
+    /*display: inline-block;*/
+/*}*/
+/*.explore-example {*/
     /*height: 80px;*/
-}
-.explore-example .logo {
-    height: 50px;
-    float: left;
-    padding-right: 10px;
-}
-.explore-example p {
-    padding-bottom: 10px;
-}
+/*}*/
+/*.explore-example .logo {*/
+    /*height: 50px;*/
+    /*float: left;*/
+    /*padding-right: 10px;*/
+/*}*/
+/*.explore-example p {*/
+    /*padding-bottom: 10px;*/
+/*}*/
 
 
 
