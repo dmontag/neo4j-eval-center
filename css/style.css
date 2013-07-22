@@ -6,7 +6,7 @@ hr {
     border-top: #d7d7d7 1px solid;
 }
 
-.container {
+#content {
     margin: 0 auto;
     padding: 50px;
     max-width: 900px;
