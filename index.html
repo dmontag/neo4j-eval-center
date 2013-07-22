@@ -109,9 +109,10 @@
     <div class="menu">
         <ul>
             <li><a href="#what">What is Neo4j</a></li>
+            <li><a href="#arch">Logical architecture</a></li>
             <li><a href="#how">How is Neo4j being used</a></li>
             <li><a href="#try">Test drive Neo4j</a></li>
-            <li><a href="#engage">Where to learn more</a></li>
+            <li><a href="#learn">Where to learn more</a></li>
         </ul>
     </div>
 
@@ -123,14 +124,14 @@
         </div>
 
         <div class="row-fluid">
-            <img class="evalIntro-banner" src="img/people-network.jpg" />
+            <img class="banner" src="img/people-network.jpg" />
         </div>
 
         <div class="row-fluid">
             <div class="span4">
                 <h4>Graph database</h4>
                 <p>
-                    Neo4j is a database. It stores data as a graph, which consist of
+                    Neo4j is a graph database. It stores data as a graph, which consist of
                     <em>nodes</em> and <em>relationships</em>.
                 </p>
                 <p>
@@ -145,7 +146,7 @@
                     Neo4j is built ground-up for graphs, from the storage layer to the query language.
                 </p>
                 <p>
-                    Connections can be queried with high performance, often <em>thousands of
+                    Using native graph storage, connections can be queried with high performance, often <em>thousands of
                     times faster</em> than a relational database.
                 </p>
             </div>
@@ -161,8 +162,60 @@
             </div>
         </div>
 
-        <hr/>
     </div>
+
+    <hr/>
+
+    <div id="arch" class="evalArch row-fluid">
+        <div class="heading">95% of Neo Technology customers use Enterprise Edition.</div>
+        <div class="info row-fluid span10 offset1">
+            Neo4j Enterprise Edition comes with a set of features tailored for mission-critical production deployments.
+        </div>
+        <div class="span12 row-fluid">
+            <img class="banner" src="img/arch-wide.png" />
+        </div>
+        <div class="span12 row-fluid">
+            <div class="span6">
+                <h3>High Availability Clustering</h3>
+                <p>
+                    Flagship feature of Neo4j Enterprise Edition. It provides:
+                    <ul>
+                        <li><strong>Full data redundancy</strong> across entire cluster</li>
+                        <li><strong>Service fault tolerance</strong> in case of server failure</li>
+                        <li><strong>Linear query scalability</strong> for reads</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="span6">
+                <h3>Online Backups</h3>
+                <p>
+                    Full and incremental backups of the database are standard in Enterprise.
+                    Backups can be captured from any remote server while Neo4j is running.
+                </p>
+                <p>
+                    Online Backups are highly recommended in all production deployments.
+                </p>
+            </div>
+        </div>
+        <div class="span12 row-fluid">
+            <div class="span6">
+                <h3>High-Performance Cache</h3>
+                <p>
+                    Enterprise Edition exclusively features a proprietary in-heap cache implementation,
+                    yielding significantly better memory utilization and performance than Community Edition.
+                </p>
+            </div>
+            <div class="span6">
+                <h3>24/7 Support & Maintenance</h3>
+                <p>
+                    Enterprise Edition is typically deployed with a license from Neo Technology. The standard
+                    license includes 24/7 support and access to the Neo Technology Professional Services network.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr/>
 
     <div id="how" class="evalHow row-fluid">
         <div class="heading">Over 30 of the Global 2000 use Neo4j Enterprise Edition.</div>
@@ -468,7 +521,7 @@
 
     <hr/>
 
-    <div id="engage" class="evalEngage row-fluid">
+    <div id="learn" class="evalEngage row-fluid">
         <div class="heading">Interested? Learn more.</div>
         <div class="row-fluid">
             <div class="span2 offset1">
