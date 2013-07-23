@@ -51,10 +51,10 @@
 <div class="navbar navbar-static-top">
     <div class="navbar-inner">
         <div class="container">
-            <div class="brand"><img src="img/neo4j-small.png"/> Neo4j Eval Center</div>
+            <div class="brand">Neo4j Eval Center</div>
             <ul class="nav">
-                <li><a href="http://neotechnology.com">Neo Technology</a></li>
-                <li><a href="http://neo4j.org">Neo4j</a></li>
+                <li><a href="http://neotechnology.com"><img src="img/neotech-small.png"/> Neo Technology</a></li>
+                <li><a href="http://neo4j.org"><img src="img/neo4j-small.png"/> Neo4j</a></li>
                 <li><a href="http://graphdatabases.com">Graph Databases Book</a></li>
             </ul>
         </div>
@@ -101,7 +101,7 @@
     <div class="menu">
         <ul>
             <li><a href="#what">What is Neo4j</a></li>
-            <li><a href="#arch">Logical architecture</a></li>
+            <li><a href="#arch">Enterprise Architecture</a></li>
             <li><a href="#how">How is Neo4j being used</a></li>
             <li><a href="#try">Test drive Neo4j</a></li>
             <li><a href="#learn">Where to learn more</a></li>
@@ -174,9 +174,9 @@
             <div class="span6">
                 <h3>High Availability Clustering</h3>
                 <p>
-                    Flagship feature of Neo4j Enterprise Edition. It provides:
+                    Only included with Neo4j Enterprise Edition, High Availability Clustering provides:
                     <ul>
-                        <li><strong>Full data redundancy</strong> across entire cluster</li>
+                        <li><strong>Full data redundancy</strong> across the entire cluster</li>
                         <li><strong>Service fault tolerance</strong> in case of server failure</li>
                         <li><strong>Linear query scalability</strong> for reads</li>
                     </ul>
@@ -225,6 +225,7 @@
         <div class="explore">
             <!--<h4>Explore by Industry</h4>-->
             <div class="explore-links row-fluid">
+            	<div class="span10 offset1">
                 <ul class="nav nav-pills">
                     <li class="active"><a href="#industry-software" data-toggle="tab">Software</a></li>
                     <li><a href="#industry-telco" data-toggle="tab">Telecommunications</a></li>
@@ -232,13 +233,14 @@
                     <li><a href="#industry-health" data-toggle="tab">Health Care</a></li>
                     <li><a href="#industry-gaming" data-toggle="tab">Gaming</a></li>
                 </ul>
+              </div>
             </div>
             <div class="explore-example tab-content">
                 <div id="industry-software" class="tab-pane active row-fluid">
-                    <div class="span3">
+                    <div class="span3 offset1">
                         <img src="img/logos/fiftythree.png" />
                     </div>
-                    <div class="span8">
+                    <div class="span7">
                         <p>
                             FiftyThree is the company behind Paper, an iPad app for freeform writing/sketching/drawing
                             used at companies such as Apple, Facebook, Nike, Pixar, and Vimeo.
@@ -253,10 +255,10 @@
                     </div>
                 </div>
                 <div id="industry-telco" class="tab-pane row-fluid">
-                    <div class="span3">
+                    <div class="span3 offset1">
                         <img src="img/logos/telenor.png" />
                     </div>
-                    <div class="span8">
+                    <div class="span7">
                         <p>
                             Telenor Group, one of the top 10 telecoms in the world, uses Neo4j for identity
                             management and access control across the customer organizational hierarchy.
@@ -270,10 +272,17 @@
                 </div>
                 <div id="industry-finance" class="tab-pane row-fluid">
                     <div class="span3">
-                        Logo
+                        <img src="img/logos/ice.png" />
                     </div>
                     <div class="span8">
-                        The Intercontinental Exchange
+                    	<p>
+                        Around the world, every trading day, The Intercontinental Exchange (ICE) offers its participants access to a range of liquid markets, financial services such as risk management, and a transparent view of the global markets. 
+                      </p>
+                      <p>
+                      	Neo4j enables ICE to provide a global collaboration platform for traders on the exchange.
+                      	By leveraging Neo4j, ICE reduced development times and brought to market a versatile 
+                      	collaboration platform for finance professionals where they can get more done, together. 
+                      </p>
                     </div>
                 </div>
                 <div id="industry-health" class="tab-pane row-fluid">
@@ -298,6 +307,7 @@
         <div class="explore">
             <!--<h4>Explore by Use Case</h4>-->
             <div class="explore-links row-fluid">
+            	<div class="span10 offset1">
                 <ul class="nav nav-pills">
                     <li class="active"><a href="#usecase-social" data-toggle="tab">Social</a></li>
                     <li><a href="#usecase-recommendations" data-toggle="tab">Recommendations</a></li>
@@ -305,22 +315,20 @@
                     <li><a href="#usecase-access" data-toggle="tab">Identity & Access Management</a></li>
                     <li><a href="#usecase-geo" data-toggle="tab">Geo</a></li>
                 </ul>
+              </div>
             </div>
             <div class="explore-example tab-content">
                 <div id="usecase-social" class="tab-pane active row-fluid">
-                    <div class="span3">
-                        <img class="logo" src="img/logos/dtag.png" />
+                    <div class="span3 offset1">
+                        <img class="logo" src="img/logos/classmates.png" />
                     </div>
-                    <div class="span8">
+                    <div class="span7">
                         <p>
-                            Deutsche Telekom is worldwide telecommunications giant. With operations in mobile, TV,
-                            Internet services, and more, it is one of the biggest providers of digital services in
-                            the world.
+                            Classmates.com operates the world's largest online yearbook database. The company connects members in the United States and Canada with friends and acquaintances from school, work, and the military.
                         </p>
                         <p>
-                            Powered by Neo4j, Deutsche Telekom offers an interactive sports experience to soccer fans.
-                            Subscribers can vote on real-time polls about e.g. referee decisions, and Deutsche Telekom
-                            can then serve back interesting statistics on the poll results.
+                            Neo4j enables Classmates.com to focus 100% on their data and the value the can 
+                            bring to customers with that data. The flexible data model allows for the inherently complex relationships in the domain to be modelled and queried with ease.
                         </p>
                     </div>
                 </div>
@@ -442,13 +450,13 @@
                         </div>
                         <div id="sample-finance" class="tab-pane">
                             <div class="span7">
- <div class="runnable-example" frag="0">
+ 															<div class="runnable-example" frag="0">
                                 <h4>Transitive Closure <button class="run-example btn btn-success btn-mini">Try this</button></h4>
                                 <p>
                                     Given suspicions about Hank, find related information to investigate.
                                 <pre class="cypher-query"></pre>
                                 </p>
-                            </div>
+                            	</div>
                             <div class="runnable-example" frag="1">
                                 <h4>Investigation Targeting <button class="run-example btn btn-success btn-mini">Try this</button></h4>
                                 <p>
