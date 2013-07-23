@@ -110,26 +110,18 @@ function GraphVisualization() {
             .start();
 
         // end-of-line arrow
-        vis.append('svg:defs').selectAll('marker').data([ 'end-marker' ]) // link types if needed
+        vis.append('svg:defs').selectAll('marker').data([{id:'end-marker', color:"black"}, {id:'end-marker-selected', color:"red"} ]) // link types if needed
             .enter().append('svg:marker').attr('viewBox', '0 -5 10 10').attr('refX', 15).attr('refY', 0).attr(
-            'markerWidth', 8).attr('markerHeight', 8).attr("id", "end-marker").attr('class', 'd3-marker').attr('orient', 'auto').append(
-            'svg:path').attr('d', 'M0,-5L10,0L0,5');
+            'markerWidth', 8).attr('markerHeight', 8).attr("id", function(d) {return d.id;}).attr('class', 'd3-marker').attr('orient', 'auto').append(
+            'svg:path').attr('d', 'M0,-5L10,0L0,5').attr("stroke", function(d) {return d.color;}).attr("fill", function(d) {return d.color;});
 
         var link = vis.selectAll('line.link').data(data.links).enter().append('svg:line').attr('class', 'd3-link')
-            .attr('marker-end', 'url(#end-marker)') // was d.type
-            .style('stroke',function (d) {
-                return d['selected'] ? 'red' : 'black';
-            }).style('stroke-width',function (d) {
-                return d['selected'] ? 2 : null;
-            }).attr('x1',function (d) {
-                return d.source.x;
-            }).attr('y1',function (d) {
-                return d.source.y;
-            }).attr('x2',function (d) {
-                return d.target.x;
-            }).attr('y2', function (d) {
-                return d.target.y;
-            });
+            .attr('marker-end', function(d) { return "url(#end-marker" + (d['selected'] ? "-selected" : "") + ")";}) // was d.type
+            .style('stroke',function (d) { return d['selected'] ? 'red' : 'black'; })
+            .attr('x1',function (d) { return d.source.x; })
+            .attr('y1',function (d) { return d.source.y; })
+            .attr('x2',function (d) { return d.target.x; })
+            .attr('y2', function (d) { return d.target.y; });
 
         var node = vis.selectAll('g.node').data(data.nodes).enter().append('circle').attr('class', 'd3-node').attr(
             'r', 5)
