@@ -69,18 +69,16 @@ hr {
 
 .menu li {
     display: inline;
-    padding: 10px;
+    padding: 15px;
 }
 .menu {
     text-align: center;
     font-size: 16px;
 }
 
-
-.evalArch h3 {
+h3 {
     font-weight: lighter;
 }
-
 
 .info {
     text-align: center;
@@ -89,8 +87,13 @@ hr {
 
 
 .explore {
-    padding-bottom: 40px;
+    /*padding-bottom: 40px;*/
 }
+.well {
+    /*background-color: #f9f9f9;*/
+    background-color: #fff;
+}
+
 /*.explore h4 {*/
     /*text-align: center;*/
 /*}*/

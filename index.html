@@ -101,10 +101,10 @@
     <div class="menu">
         <ul>
             <li><a href="#what">What is Neo4j</a></li>
-            <li><a href="#arch">Enterprise Architecture</a></li>
-            <li><a href="#how">How is Neo4j being used</a></li>
+            <li><a href="#arch">Enterprise architecture</a></li>
+            <li><a href="#how">Case studies</a></li>
             <li><a href="#try">Test drive Neo4j</a></li>
-            <li><a href="#learn">Where to learn more</a></li>
+            <li><a href="#learn">Learn more</a></li>
         </ul>
     </div>
 
@@ -222,156 +222,213 @@
             </div>
         </div>
 
-        <div class="explore">
-            <!--<h4>Explore by Industry</h4>-->
-            <div class="explore-links row-fluid">
-            	<div class="span10 offset1">
-                <ul class="nav nav-pills">
-                    <li class="active"><a href="#industry-software" data-toggle="tab">Software</a></li>
-                    <li><a href="#industry-telco" data-toggle="tab">Telecommunications</a></li>
-                    <li><a href="#industry-finance" data-toggle="tab">Financial Services</a></li>
-                    <li><a href="#industry-health" data-toggle="tab">Health Care</a></li>
-                    <li><a href="#industry-gaming" data-toggle="tab">Gaming</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="explore-example tab-content">
-                <div id="industry-software" class="tab-pane active row-fluid">
-                    <div class="span3 offset1">
-                        <img src="img/logos/fiftythree.png" />
-                    </div>
-                    <div class="span7">
-                        <p>
-                            FiftyThree is the company behind Paper, an iPad app for freeform writing/sketching/drawing
-                            used at companies such as Apple, Facebook, Nike, Pixar, and Vimeo.
-                        </p>
-                        <p>
-                            "It sounds cliche, but we were truly able to translate whiteboard sketches
-                            directly to our data model, with no (or minimal) futzing in between. And that
-                            meant that we were able to crank out features and iterate rapidly on them.
-                            The simple programming model and schemaless structure were key factors here."
-                            – Aseem Kishore
-                        </p>
-                    </div>
+        <h3>Explore by Industry</h3>
+        <div class="explore well">
+            <div class="row-fluid">
+                <div class="explore-links span3">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#industry-software" data-toggle="tab">Software</a></li>
+                        <li><a href="#industry-telco" data-toggle="tab">Telecommunications</a></li>
+                        <li><a href="#industry-finance" data-toggle="tab">Financial Services</a></li>
+                        <li><a href="#industry-health" data-toggle="tab">Health Care</a></li>
+                        <li><a href="#industry-gaming" data-toggle="tab">Gaming</a></li>
+                    </ul>
                 </div>
-                <div id="industry-telco" class="tab-pane row-fluid">
-                    <div class="span3 offset1">
-                        <img src="img/logos/telenor.png" />
-                    </div>
-                    <div class="span7">
-                        <p>
-                            Telenor Group, one of the top 10 telecoms in the world, uses Neo4j for identity
-                            management and access control across the customer organizational hierarchy.
-                        </p>
-                        <p>
-                            Telenor went from hours to milliseconds with Neo4j when they replaced their SQL-based
-                            access control solution with Neo4j. Permissions can now be resolved in real-time,
-                            with any changes being reflected immediately.
-                        </p>
-                    </div>
-                </div>
-                <div id="industry-finance" class="tab-pane row-fluid">
-                    <div class="span3">
-                        <img src="img/logos/ice.png" />
-                    </div>
-                    <div class="span8">
-                    	<p>
-                        Around the world, every trading day, The Intercontinental Exchange (ICE) offers its participants access to a range of liquid markets, financial services such as risk management, and a transparent view of the global markets. 
-                      </p>
-                      <p>
-                      	Neo4j enables ICE to provide a global collaboration platform for traders on the exchange.
-                      	By leveraging Neo4j, ICE reduced development times and brought to market a versatile 
-                      	collaboration platform for finance professionals where they can get more done, together. 
-                      </p>
-                    </div>
-                </div>
-                <div id="industry-health" class="tab-pane row-fluid">
-                    <div class="span3">
-                        Logo
-                    </div>
-                    <div class="span8">
-                        Zephyr Health
-                    </div>
-                </div>
-                <div id="industry-gaming" class="tab-pane row-fluid">
-                    <div class="span3">
-                        Logo
-                    </div>
-                    <div class="span8">
-                        Gamesys
+                <div class="span9">
+                    <div class="explore-example tab-content">
+                        <div id="industry-software" class="tab-pane active row-fluid">
+                            <div class="span3">
+                                <img src="img/logos/fiftythree.png" />
+                            </div>
+                            <div class="span9">
+                                <p>
+                                    FiftyThree is the company behind Paper, an iPad app for freeform writing/sketching/drawing
+                                    used at companies such as Apple, Facebook, Nike, Pixar, and Vimeo.
+                                </p>
+                                <p>
+                                    "It sounds cliche, but we were truly able to translate whiteboard sketches
+                                    directly to our data model, with no (or minimal) futzing in between. And that
+                                    meant that we were able to crank out features and iterate rapidly on them.
+                                    The simple programming model and schemaless structure were key factors here."
+                                    – Aseem Kishore
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="industry-telco" class="tab-pane row-fluid">
+                            <div class="span3">
+                                <img src="img/logos/telenor.png" />
+                            </div>
+                            <div class="span9">
+                                <p>
+                                    Telenor Group, one of the top 10 telecoms in the world, uses Neo4j for identity
+                                    management and access control across the customer organizational hierarchy.
+                                </p>
+                                <p>
+                                    Telenor went from hours to milliseconds with Neo4j when they replaced their SQL-based
+                                    access control solution with Neo4j. Permissions can now be resolved in real-time,
+                                    with any changes being reflected immediately.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="industry-finance" class="tab-pane row-fluid">
+                            <div class="span3">
+                                <img src="img/logos/ice.png" />
+                            </div>
+                            <div class="span8">
+                                <p>
+                                    Around the world, every trading day, The Intercontinental Exchange (ICE) offers its participants access to a range of liquid markets, financial services such as risk management, and a transparent view of the global markets.
+                                </p>
+                                <p>
+                                    Neo4j enables ICE to provide a global collaboration platform for traders on the exchange.
+                                    By leveraging Neo4j, ICE reduced development times and brought to market a versatile
+                                    collaboration platform for finance professionals where they can get more done, together.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="industry-health" class="tab-pane row-fluid">
+                            <div class="span3">
+                                <img src="img/logos/zephyr.png" />
+                            </div>
+                            <div class="span9">
+                                <p>
+                                    BI for health care, Zephyr Health enables the merging of health care
+                                    datasets to compelling visualization and reporting, drawing on insights
+                                    through active data research and modeling.
+                                </p>
+                                <p>
+                                    The health care domain is a complex graph of connected data, including hospitals,
+                                    practitioners, patients, and much more. Neo4j excels at storing, querying, and
+                                    reporting on this kind of data, and was therefore a natural choice for Zephyr
+                                    Health.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="industry-gaming" class="tab-pane row-fluid">
+                            <div class="span3">
+                                <img src="img/logos/gamesys.png" />
+                            </div>
+                            <div class="span9">
+                                <p>
+                                    Gamesys Ltd. is a leading gambling provider in the UK, with success games
+                                    including Jackpotjoy and an official Caesars Casino partnership.
+                                </p>
+                                <p>
+                                    Gamesys leverages Neo4j to power high-value social features in its cash
+                                    gaming portfolio. This includes tracking which players interact with whom
+                                    and managing referral bonuses.
+                                </p>
+                                <p>
+                                    According to Gamesys, Neo4j was selected from an extensive research and
+                                    development exercise in which several competing APIs were evaluated.
+                                </p>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="explore">
-            <!--<h4>Explore by Use Case</h4>-->
-            <div class="explore-links row-fluid">
-            	<div class="span10 offset1">
-                <ul class="nav nav-pills">
-                    <li class="active"><a href="#usecase-social" data-toggle="tab">Social</a></li>
-                    <li><a href="#usecase-recommendations" data-toggle="tab">Recommendations</a></li>
-                    <li><a href="#usecase-network" data-toggle="tab">Network & Data Center Management</a></li>
-                    <li><a href="#usecase-access" data-toggle="tab">Identity & Access Management</a></li>
-                    <li><a href="#usecase-geo" data-toggle="tab">Geo</a></li>
-                </ul>
-              </div>
+        <h3>Explore by Use Case</h3>
+        <div class="explore well">
+            <div class="row-fluid">
+                <div class="explore-links span3">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#usecase-social" data-toggle="tab">Social</a></li>
+                        <li><a href="#usecase-recommendations" data-toggle="tab">Recommendations</a></li>
+                        <li><a href="#usecase-network" data-toggle="tab">Network & Data Center Management</a></li>
+                        <li><a href="#usecase-access" data-toggle="tab">Identity & Access Management</a></li>
+                        <li><a href="#usecase-geo" data-toggle="tab">Geo</a></li>
+                    </ul>
+                </div>
+                <div class="span9">
+                    <div class="explore-example tab-content">
+                        <div id="usecase-social" class="tab-pane active row-fluid">
+                            <div class="span3">
+                                <img class="logo" src="img/logos/classmates.png" />
+                            </div>
+                            <div class="span9">
+                                <p>
+                                    Classmates.com operates the world's largest online yearbook database. The company connects members in the United States and Canada with friends and acquaintances from school, work, and the military.
+                                </p>
+                                <p>
+                                    Neo4j enables Classmates.com to focus 100% on their data and the value the can
+                                    bring to customers with that data. The flexible data model allows for the inherently complex relationships in the domain to be modelled and queried with ease.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="usecase-recommendations" class="tab-pane row-fluid">
+                            <div class="span3">
+                                <img class="logo" src="img/logos/glassdoor.png" />
+                            </div>
+                            <div class="span9">
+                                <p>
+                                    Glassdoor is rapidly becoming the leading tech job search site in the United States.
+                                    They are well-known for their crowd-sourced company review and salary search features.
+                                </p>
+                                <p>
+                                    By storing both the social graph as well as the employment graph in Neo4j,
+                                    Glassdoor is able to serve users with accurate real-time job recommendations.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="usecase-network" class="tab-pane row-fluid">
+                            <div class="span3">
+                                <img class="logo" src="img/logos/serena.png" />
+                            </div>
+                            <div class="span9">
+                                <p>
+                                    Serena Software, Inc. provides an integrated suite of software products for managing
+                                    and controlling change across distributed systems and mainframe platforms worldwide.
+                                </p>
+                                <p>
+                                    The management of vast amounts of assets and the ways they are related,
+                                    both physically and dependency-wise, is a complex problem to model and query.
+                                    Neo4j enables this with high performance and reliability, while keeping development
+                                    friction to a minimum.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="usecase-access" class="tab-pane row-fluid">
+                            <div class="span3">
+                                <img class="logo" src="img/logos/identropy.png" />
+                            </div>
+                            <div class="span9">
+                                <p>
+                                    Identropy provides cloud-based identity management solutions to enterprise
+                                    customers.
+                                </p>
+                                <p>
+                                    An "LDAP on steroids", Neo4j provides the foundational capabilities
+                                    required to model, query, and store the relationships between users, organizations,
+                                    accounts, and much more.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="usecase-geo" class="tab-pane row-fluid">
+                            <div class="span3">
+                                <img class="logo" src="img/logos/accenture.jpg" />
+                            </div>
+                            <div class="span9">
+                                <p>
+                                    Spearheaded by Accenture, Neo4j powers the core routing engine at one of the 
+                                    largest shipping companies in the world. Routing thousands of parcels per second,
+                                    Neo4j is critical to the operation.  
+                                </p>
+                                <p>
+                                    The development speed and flexibility gained with Neo4j, coupled with its
+                                    world-class performance, made the choice of technology a no-brainer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="explore-example tab-content">
-                <div id="usecase-social" class="tab-pane active row-fluid">
-                    <div class="span3 offset1">
-                        <img class="logo" src="img/logos/classmates.png" />
-                    </div>
-                    <div class="span7">
-                        <p>
-                            Classmates.com operates the world's largest online yearbook database. The company connects members in the United States and Canada with friends and acquaintances from school, work, and the military.
-                        </p>
-                        <p>
-                            Neo4j enables Classmates.com to focus 100% on their data and the value the can 
-                            bring to customers with that data. The flexible data model allows for the inherently complex relationships in the domain to be modelled and queried with ease.
-                        </p>
-                    </div>
-                </div>
-                <div id="usecase-recommendations" class="tab-pane row-fluid">
-                    <div class="span3">
-                        <img class="logo" src="img/logos/glassdoor.png" />
-                    </div>
-                    <div class="span8">
-                        <p>
-                            Glassdoor is rapidly becoming the leading tech job search site in the United States.
-                            They are well-known for their crowd-sourced company review and salary search features.
-                        </p>
-                        <p>
-                            By storing both the social graph as well as the employment graph in Neo4j,
-                            Glassdoor is able to serve users with accurate real-time job recommendations.
-                        </p>
-                    </div>
-                </div>
-                <div id="usecase-network" class="tab-pane row-fluid">
-                    <div class="span3">
-                        Logo
-                    </div>
-                    <div class="span8">
-                        Serena
-                    </div>
-                </div>
-                <div id="usecase-access" class="tab-pane row-fluid">
-                    <div class="span3">
-                        Logo
-                    </div>
-                    <div class="span8">
-                        IDentropy
-                    </div>
-                </div>
-                <div id="usecase-geo" class="tab-pane row-fluid">
-                    <div class="span3">
-                        Logo
-                    </div>
-                    <div class="span8">
-                        Accenture / Large shipping company
-                    </div>
-                </div>
-            </div>
+
+
         </div>
     </div>
 
