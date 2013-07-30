@@ -1,4 +1,4 @@
  MATCH (n)<-[:DEPENDS_ON*]-(dependent)
- RETURN n, count(dependent) AS dependents
+ RETURN n, count(DISTINCT dependent) AS dependents
  ORDER BY dependents DESC
  LIMIT 1

@@ -1,9 +1,13 @@
 body {
     background-color: #eeeeee;
+    padding-top: 40px;
 }
 
 hr {
     border-top: #d7d7d7 1px solid;
+    position:relative;
+    width:90%;
+    left:5%;
 }
 
 #content {
@@ -18,6 +22,7 @@ hr {
 .heading-top {
     font-size: 40px;
     text-align: center;
+    font-weight: lighter;
     padding-bottom: 20px;
 }
 

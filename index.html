@@ -15,7 +15,7 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $("#contact-button").click(function(e) {
+            $(".contact-button").click(function(e) {
                 window.location = "http://info.neotechnology.com/ContactUs.html"
             });
 
@@ -47,14 +47,22 @@
 </head>
 <body>
 
-<div class="navbar navbar-static-top">
+<div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
             <div class="brand">Neo4j Eval Center</div>
             <ul class="nav">
+                <li class="divider-vertical"></li>
                 <li><a href="http://neotechnology.com"><img src="img/neotech-small.png"/> Neo Technology</a></li>
+                <li class="divider-vertical"></li>
                 <li><a href="http://neo4j.org"><img src="img/neo4j-small.png"/> Neo4j</a></li>
+                <li class="divider-vertical"></li>
                 <li><a href="http://graphdatabases.com">Graph Databases Book</a></li>
+                <li class="divider-vertical"></li>
+            </ul>
+            <ul class="nav pull-right">
+                <li><a href="https://twitter.com/neo4j"><img src="img/twitter-small.png" /></a></li>
+                <li><button class="contact-button btn btn-info btn">Contact us</button></li>
             </ul>
         </div>
 
@@ -66,7 +74,7 @@
     <div class="evalTop">
         <div class="row-fluid">
             <div class="heading-top">
-                Everyone has a graph. Find yours.
+                Graphs are everywhere. Discover yours.
             </div>
         </div>
 
@@ -84,7 +92,7 @@
                     graph databases provide unparalleled performance and flexibility.
                 </div>
                 <div class="span2 offset1">
-                    <button id="contact-button" class="btn btn-info btn-large">Contact us<br/>to learn more</button>
+                    <button class="contact-button btn btn-info btn-large">Contact us<br/>to learn more</button>
                 </div>
             </div>
             <div class="row-fluid">
