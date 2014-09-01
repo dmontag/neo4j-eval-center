@@ -50,14 +50,16 @@
 <div class="navbar navbar-static-top">
     <div class="navbar-inner">
         <div class="container">
-            <div class="brand">Neo4j Eval Center</div>
+            <div class="brand">Neo4j Intro</div>
             <ul class="nav">
+                <li class="divider-vertical"></li>
+                <li><a href="http://neo4j.com"><img src="img/neo4j-small.png"/> Neo4j</a></li>
                 <li class="divider-vertical"></li>
                 <li><a href="http://neotechnology.com"><img src="img/neotech-small.png"/> Neo Technology</a></li>
                 <li class="divider-vertical"></li>
-                <li><a href="http://neo4j.org"><img src="img/neo4j-small.png"/> Neo4j</a></li>
+                <li><a href="http://graphdatabases.com">O'Reilly Book</a></li>
                 <li class="divider-vertical"></li>
-                <li><a href="http://graphdatabases.com">Graph Databases Book</a></li>
+                <li><a href="http://graphacademy.com">Learning Center</a></li>
                 <li class="divider-vertical"></li>
             </ul>
             <ul class="nav pull-right">
@@ -86,10 +88,12 @@
         <div class="row-fluid">
             <div class="row-fluid">
                 <div class="highlighted span7 offset1">
-                    With ever-increasing amounts of data, graph databases are rapidly
-                    becoming a key technology in today's enterprises. Regardless of whether you're
-                    managing cloud infrastructure or processing financial transactions,
-                    graph databases provide unparalleled performance and flexibility.
+                    With the ever-increasing amount of connections in our data, 
+                    graph databases help companies differentiate themselves by
+                    unlocking the insights for use real-time services. 
+
+                    <strong>Scroll down to find out how!</strong>
+
                 </div>
                 <div class="span2 offset1">
                     <button class="contact-button btn btn-info btn-large">Contact us<br/>to learn more</button>
@@ -99,6 +103,7 @@
                 <iframe class="intro-video" src="http://player.vimeo.com/video/56040747?title=0&amp;byline=0&amp;portrait=0"
                         width="700" height="400" frameborder="0"
                         webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                <!-- <iframe class="intro-video" width="700" height="400" src="http://www.youtube.com/embed/qbZ_Q-YnHYo" frameborder="0" allowfullscreen></iframe> -->
             </div>
         </div>
 
@@ -120,7 +125,7 @@
 
     <div id="what" class="evalIntro row-fluid">
         <div class="heading">
-            Neo4j is 1000x faster than a relational database.
+            Neo4j is 1000x faster than a relational database
         </div>
 
         <div class="row-fluid span12">
@@ -131,33 +136,34 @@
             <div class="span4">
                 <h4>Graph database</h4>
                 <p>
-                    Neo4j is a graph database. It stores data as a graph, which consist of
-                    <em>nodes</em> and <em>relationships</em>.
+                    Graph databases are built ground-up for storing connected data –
+                    something no other kind of database does well.
                 </p>
                 <p>
-                    Graphs form a network-like data structure.
-                    Similar to how the neurons of the brain are connected, graph databases excel at
-                    making sense of and storing connected data.
+                    By leveraging connected data, companies can differentiate themselves
+                    by drawing on previously untapped insights.
                 </p>
             </div>
             <div class="span4">
                 <h4>1000x faster</h4>
                 <p>
-                    Neo4j is built ground-up for graphs, from the storage layer to the query language.
+                    Graph applications are frequently 1000 times faster than equivalent
+                    RDBMS implementations.
                 </p>
                 <p>
-                    Using native graph storage, connections can be queried with high performance, often <em>thousands of
-                    times faster</em> than a relational database.
+                    When operations go from taking minutes to taking milliseconds, 
+                    completely new doors open in terms of the services you can build.
                 </p>
             </div>
             <div class="span4">
                 <h4>Ask anything</h4>
                 <p>
-                    The <em>Cypher graph query language</em> enables rapid development,
-                    as well as excellent reporting. 
+                    In a graph database, you can ask deep questions about anything,
+                    in real-time.
                 </p>
                 <p>
-                    Cypher is to graphs what SQL is to relational.
+                    The <em>Cypher query language</em> enables rapid development,
+                    as well as excellent reporting.
                 </p>
             </div>
         </div>
@@ -167,7 +173,7 @@
     <hr/>
 
     <div id="arch" class="evalArch">
-        <div class="heading">95% of Neo Technology customers use Enterprise Edition.</div>
+        <div class="heading">95% of Neo Technology customers use Enterprise Edition</div>
         <div class="info row-fluid">
             <div class="span10 offset1">
                 Neo4j Enterprise Edition comes with a set of features tailored for mission-critical production deployments.
@@ -180,34 +186,22 @@
         </div>
         <div class="row-fluid">
             <div class="span6">
-                <h3>High Availability Clustering</h3>
+                <h3>Neo4j Clustering</h3>
                 <p>
-                    Unique to Neo4j Enterprise Edition, High Availability Clustering provides:
+                    Unique to Neo4j Enterprise Edition, Neo4j Clustering provides:
                     <ul>
-                        <li><strong>Linear query scalability</strong> for reads</li>
-                        <li><strong>Full data redundancy</strong> across the entire cluster</li>
-                        <li><strong>Service fault tolerance</strong> in case of server failure</li>
+                        <li><strong>High availability</strong> with hands-off operation</li>
+                        <li><strong>Read scalability</strong> with more servers</li>
+                        <li><strong>Online backups</strong>, both full and incremental</li>
+                        <li>
+                            <strong>Multi-region</strong> clustering, 
+                            <strong>DR</strong>, and more.
+                        </li>
                     </ul>
                 </p>
             </div>
             <div class="span6">
-                <h3>Online Backups</h3>
-                <p>
-                    The ability to do full and incremental backups of the database are standard in Enterprise.
-                    Backups can be captured from any remote server while Neo4j is running.
-                </p>
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="span6">
-                <h3>High-Performance Cache</h3>
-                <p>
-                    Enterprise Edition exclusively features a proprietary in-heap cache implementation,
-                    yielding significantly better memory utilization and performance than Community Edition.
-                </p>
-            </div>
-            <div class="span6">
-                <h3>24/7 Support & Maintenance</h3>
+                <h3>24/7 Support & Services</h3>
                 <p>
                     An Enterprise Edition license includes 24/7 support and access to the
                     Neo Technology Professional Services network. 
@@ -215,7 +209,25 @@
                 <p>
                     Our graph experts have extensive experience
                     with graph and NoSQL technologies, and will guide you from proof of concept through production
-                    launch and beyond.
+                    launch and beyond. Contact us!
+                </p>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span6">
+                <h3>High-Performance Components</h3>
+                <p>
+                    Enterprise Edition exclusively features proprietary internals, 
+                    including a in-heap cache implementation, and more. This yields 
+                    significantly better memory utilization and performance than Community Edition.
+                </p>
+            </div>
+            <div class="span6">
+                <h3>Fully Certified</h3>
+                <p>
+                    Neo4j Enterprise Edition is put through a rigorous and extensive 
+                    series of QA procedures. It is fully certified by Neo Technology 
+                    for production use.
                 </p>
             </div>
         </div>
@@ -224,7 +236,7 @@
     <hr/>
 
     <div id="how" class="evalHow row-fluid">
-        <div class="heading">Over 25 of the Global 2000 use Neo4j Enterprise Edition.</div>
+        <div class="heading">Over 25 of the Global 2000 use Neo4j Enterprise Edition</div>
         <div class="info row-fluid">
             <div class="span8 offset2">
                 Neo4j is deployed by thousands of organizations worldwide, across a wide range of uses.
@@ -445,7 +457,7 @@
     <hr/>
 
     <div id="try" class="evalMe">
-        <div class="heading">Take Neo4j for a test drive with Cypher.</div>
+        <div class="heading">Take Neo4j for a test drive with Cypher</div>
 
         <div class="info row-fluid">
             Select a use case below.
@@ -553,7 +565,7 @@
             </div>
         </div>
         <div id="import" class="your-data">
-            <div class="heading-first">Try it with your own data in 3 steps.</div>
+            <div class="heading-first">Try it with your own data in 3 steps</div>
             <div class="row-fluid">
                 <div class="span4">
                     <h4>1. Model your graph</h4>
@@ -562,49 +574,63 @@
                     </p>
                 </div>
                 <div class="span4">
-                    <h4>2. Export your data to TSV</h4>
+                    <h4>2. Insert your data with Cypher</h4>
                     <p>
-                        Create one file for nodes and one file for relationships, with the graph structure you
-                        wish to model.
+                        Use Cypher to insert your data into Neo4j.
                     </p>
                 </div>
                 <div class="span4">
-                    <h4>3. Import the graph</h4>
+                    <h4>3. Bulk load data in volumes</h4>
                     <p>
-                        Use the command-line Neo4j
-                        <a href="https://github.com/jexp/batch-import">import tool</a> to ingest the TSV files.
+                        Use the <code>LOAD CSV</code> command in Cypher to
+                        load millions of nodes at once.
                     </p>
                 </div>
             </div>
             <div class="row-fluid">
                 <div class="span4"><img src="img/model.jpg" /></div>
                 <div class="span4">
-                    <pre>id→name→brand
-1→Joe→
-2→Bob→
-3→→Tesla</pre>
-                    <em>nodes.tsv</em>
+                    <pre>MERGE (p1:Person {name:"Joe"})
+MERGE (p2:Person {name:"Bob"})
+MERGE (p1)-[:KNOWS]-(p2);</pre>
+
+                    <pre>MERGE (p:Person {name:"Bob"})
+MERGE (c:Company {name:"Tesla"})
+MERGE (p)-[:WORKS_AT]->(c);</pre>
                     <hr/>
-                    <pre>from→to→type
-1→2→KNOWS
-2→3→WORKS_AT</pre>
-                    <em>rels.tsv</em>
+                    <p>
+                        Create indexes for better node lookup performance:
+                    </p>
+                    <pre>CREATE INDEX ON :Person(name);
+CREATE INDEX ON :Company(name);</pre>
+                    <p>
+                        <em>Note: indexes speed up search for individual nodes,
+                            but are not used for graph matching.</em>
+                    </p>
                 </div>
                 <div class="span4">
+                    <pre>name
+Joe
+Bob</pre>
                     <p>
-                        <code>java … -jar … db nodes.tsv rels.tsv</code>
+                        <em>people.csv</em>
                     </p>
-                    <p>
-                        Your newly imported database is in the <code>db</code> directory.
-                    </p>
-                    <p>
-                        Then edit the <code>conf/neo4j-server.properties</code> file, changing
-                        the <code>org.neo4j.server.database.location</code> value to your database path.
-                    </p>
-                    <p>
-                        Finally start Neo4j with <code>bin/neo4j start</code> and open the 
-                        <a href="http://localhost:7474">Neo4j Browser</a>.
                     
+                    <pre>USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS
+  FROM "file:///tmp/people.csv" 
+  AS line
+MERGE (p:Person {name: line.name})</pre>
+
+                    <p>
+                        <em>Load people</em>
+                    </p>
+                    <hr/>
+                    
+                    <p>
+                        Beyond a few million,
+                        please use an <a href="https://github.com/jexp/batch-import/tree/20">
+                        offline batch loading tool</a>.
                     </p>
                 </div>
             </div>
